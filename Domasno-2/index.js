@@ -65,7 +65,20 @@ const sobiranjeProsekKumanovo=studentiCetvrtaZadaca.reduce((sum, student) => {
 const sedmaZadaca= studenti.shift();
 console.log(sedmaZadaca);
 //? 8. Да се креира нов array каде што студентите од Охрид и Куманово каде што оценките со просек се за 1 поголем(Динамички)
-const osmaZadaca=studenti.filter(student => student.grad=="Ohrid" || student.grad=="Kumanovo");
-console.log(osmaZadaca);
-const rezultat= osmaZadaca.map((student=>student.prosek+1))
-console.log(rezultat);
+// const osmaZadaca=studenti.filter(student => student.grad=="Ohrid" || student.grad=="Kumanovo");
+// console.log(osmaZadaca);
+// const rezultat= osmaZadaca.map((student=>student.prosek+1))
+// console.log(rezultat,osmaZadaca);
+// const rezultat2=osmaZadaca.forEach(student => {
+//     student.prosek+=1;
+// });
+// console.log(rezultat2);
+studenti.forEach((student)=>{
+    if(student.grad  === "Ohrid" || student.grad === "Kumanovo"){
+      student.prosek++;
+    }
+  })
+  const zoglemenProsekFor = [...studenti]
+  const rezultat=zoglemenProsekFor.filter(student=>student.grad=="Ohrid" || student.grad=="Kumanovo");
+  console.log(rezultat);
+  
