@@ -58,8 +58,10 @@ const sobiranjeProsekKumanovo=studentiCetvrtaZadaca.reduce((sum, student) => {
 //? 6. Да се додаде уште еден студент со име Горан, просек 7.3 и град Делчево
   const obj1={ime: "Goran", prosek: 7.3, grad: "Delcevo",
   }
-  studenti.push(obj1);
+  studenti.push(obj1)
   console.log(studenti);
+  
+
 //? 7. Да се избрише првиот студент во студенти
 const sedmaZadaca= studenti.shift();
 console.log(sedmaZadaca);
@@ -78,6 +80,7 @@ studenti.forEach((student)=>{
     }
   })
   const zoglemenProsekFor = [...studenti]
+
   const rezultat=zoglemenProsekFor.filter(student=>student.grad=="Ohrid" || student.grad=="Kumanovo");
   console.log(rezultat);
   
