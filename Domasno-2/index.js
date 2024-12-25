@@ -67,5 +67,5 @@ console.log(sedmaZadaca);
 //? 8. Да се креира нов array каде што студентите од Охрид и Куманово каде што оценките со просек се за 1 поголем(Динамички)
 const osmaZadaca=studenti.filter(student => student.grad=="Ohrid" || student.grad=="Kumanovo");
 console.log(osmaZadaca);
-const rezultat= osmaZadaca.map((student=>{student.prosek+1}))
+const rezultat= osmaZadaca.map((student=>student.prosek+1))
 console.log(rezultat);
