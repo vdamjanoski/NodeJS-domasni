@@ -69,14 +69,3 @@ const osmaZadaca=studenti.filter(student => student.grad=="Ohrid" || student.gra
 console.log(osmaZadaca);
 const rezultat= osmaZadaca.map((student=>{student.prosek+1}))
 console.log(rezultat);
-
-
-
-
-
-
-  
-  
-  
-  
-
