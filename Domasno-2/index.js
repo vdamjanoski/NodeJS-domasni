@@ -49,13 +49,13 @@ const sobiranjeProsekKumanovo=studentiCetvrtaZadaca.reduce((sum, student) => {
     return sum + student.prosek;
   }, 0)
   console.log(`Sobiranje prosek Kumanovo:`,sobiranjeProsekKumanovo.toFixed(2));
-  //? 5. Просек на просеците од градовите Скопје и Охрид
+//? 5. Просек на просеците од градовите Скопје и Охрид
   const studentiPettaZadaca=studenti.filter(student => student.grad=="Skopje" || student.grad=="Ohrid")
   const prosekPettaZadaca=studentiPettaZadaca.reduce((sum, student) =>{
     return sum + student.prosek;
   },0)/studentiPettaZadaca.length;
   console.log(`Prosek petta zadaca:`,prosekPettaZadaca.toFixed(2));
-  //? 6. Да се додаде уште еден студент со име Горан, просек 7.3 и град Делчево
+//? 6. Да се додаде уште еден студент со име Горан, просек 7.3 и град Делчево
   const obj1={ime: "Goran", prosek: 7.3, grad: "Delcevo",
   }
   const studenti1={studenti,obj1}
@@ -67,6 +67,9 @@ console.log(sedmaZadaca);
 //? 8. Да се креира нов array каде што студентите од Охрид и Куманово каде што оценките со просек се за 1 поголем(Динамички)
 const osmaZadaca=studenti.filter(student => student.grad=="Ohrid" || student.grad=="Kumanovo");
 console.log(osmaZadaca);
+const rezultat= osmaZadaca.map((student=>{student.prosek+1}))
+console.log(rezultat);
+
 
 
 
