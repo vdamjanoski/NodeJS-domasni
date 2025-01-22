@@ -29,50 +29,48 @@ const studenti = [
 //? 7. Да се избрише првиот студент во студенти
 //? 8. Да се креира нов array каде што студентите од Охрид и Куманово каде што оценките со просек се за 1 поголем(Динамички)
 //1. Сите студенти од Скопје чие име завршува на а и имаат просек над 7, подредени по име (растечки).
-const studentiPrvaZadaca = studenti.filter(student => student.grad == "Skopje" && student.ime.endsWith("a") && student.prosek >= 7)
+const studentiPrvaZadaca = studenti.filter(student => student.grad == "Skopje" && student.ime.endsWith("a") && student.prosek >= 7).sort((a, b) => b.ime.length - a.ime.length);
 console.log(studentiPrvaZadaca);
-const studentiPrvaZadacaSorted = studentiPrvaZadaca.sort((a, b) => a.ime - b.ime);
-console.log(studentiPrvaZadacaSorted);
-//? 2. Сите студенти кои имаат просек над 9 и не се од Скопје, подредени по просек опаѓачки.
+console.log(` 2. Сите студенти кои имаат просек над 9 и не се од Скопје, подредени по просек опаѓачки.`);
 const studentiVtoraZadaca=studenti.filter(student => student.grad != "Skopje" && student.prosek >= 9)
-console.log(studentiVtoraZadaca);
 const studentiVtoraZadacaSorted=studentiVtoraZadaca.sort((a, b) => a.prosek - b.prosek);
 console.log(studentiVtoraZadacaSorted);
-//? 3. Првите 3 студенти кои имаат имиња од 5 карактери, подредени по просек.
+console.log(`? 3. Првите 3 студенти кои имаат имиња од 5 карактери, подредени по просек.`);
 const studentiTretaZadaca=studenti.filter(student => student.ime.length == 5)
-console.log(studentiTretaZadaca);
 const studentiTretaZadacaSorted=studentiTretaZadaca.sort((a, b)=> b.prosek - a.prosek).slice(0,3)
 console.log(studentiTretaZadacaSorted);
-//? 4. Вкупен просек на студенти кои се од Куманово
+console.log(`4. Вкупен просек на студенти кои се од Куманово`);
 const studentiCetvrtaZadaca=studenti.filter(student => student.grad=="Kumanovo")
 const sobiranjeProsekKumanovo=studentiCetvrtaZadaca.reduce((sum, student) => {
     return sum + student.prosek;
   }, 0)
   console.log(`Sobiranje prosek Kumanovo:`,sobiranjeProsekKumanovo.toFixed(2));
-//? 5. Просек на просеците од градовите Скопје и Охрид
+console.log(` 5. Просек на просеците од градовите Скопје и Охрид`);
+
   const studentiPettaZadaca=studenti.filter(student => student.grad=="Skopje" || student.grad=="Ohrid")
   const prosekPettaZadaca=studentiPettaZadaca.reduce((sum, student) =>{
     return sum + student.prosek;
   },0)/studentiPettaZadaca.length;
+
   console.log(`Prosek petta zadaca:`,prosekPettaZadaca.toFixed(2));
-//? 6. Да се додаде уште еден студент со име Горан, просек 7.3 и град Делчево
-  const obj1={ime: "Goran", prosek: 7.3, grad: "Delcevo",
-  }
+console.log(`6. Да се додаде уште еден студент со име Горан, просек 7.3 и град Делчево`);
+
+  const obj1={ime: "Goran", prosek: 7.3, grad: "Delcevo"}
   studenti.push(obj1)
   console.log(studenti);
-  
+console.log(`7. Да се избрише првиот студент во студенти`);
 
-//? 7. Да се избрише првиот студент во студенти
 const sedmaZadaca= studenti.shift();
 console.log(sedmaZadaca);
-//? 8. Да се креира нов array каде што студентите од Охрид и Куманово каде што оценките со просек се за 1 поголем(Динамички)
-// const osmaZadaca=studenti.filter(student => student.grad=="Ohrid" || student.grad=="Kumanovo");
-// console.log(osmaZadaca);
-// const rezultat= osmaZadaca.map((student=>student.prosek+1))
-// console.log(rezultat,osmaZadaca);
-// const rezultat2=osmaZadaca.forEach(student => {
-//     student.prosek+=1;
-// });
+console.log(` 8. Да се креира нов array каде што студентите од Охрид и Куманово каде што оценките со просек се за 1 поголем(Динамички)`);
+
+// // const osmaZadaca=studenti.filter(student => student.grad=="Ohrid" || student.grad=="Kumanovo");
+// // console.log(osmaZadaca);
+// // const rezultat= osmaZadaca.map((student=>student.prosek+1))
+// // console.log(rezultat,osmaZadaca);
+// // const rezultat2=osmaZadaca.forEach(student => {
+// //     student.prosek+=1;
+// // });
 // console.log(rezultat2);
 studenti.forEach((student)=>{
     if(student.grad  === "Ohrid" || student.grad === "Kumanovo"){
