@@ -24,3 +24,12 @@ exports.fileDelete=(filename)=>{
         })
     })
 }
+
+// exports.fileAppend=(filename,data)=>{
+//     return new Promise((success,fail)=>{
+//         fs.appendFile(filename,data,(err)=>{
+//             if (err) return fail(err);
+//             return success();
+//         })
+//     })
+// }
