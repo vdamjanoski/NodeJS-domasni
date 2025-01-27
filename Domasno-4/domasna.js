@@ -6,25 +6,8 @@
 
 
 //? - Treba da dodademe student vo fajlot
-
-
-
-
-
-
 //? - Imeto na studentot treba da bide smenet od AAA vo AAB
-//? 1. Da ja vchitate celata sodrzina od fajlot | fs.readFile
-//? 2. Da ja konvertirate sodrzinata od obichen tekst vo js niza/objekt | JSON.parse
-//? 3. Da gi izminite site elementi vo nizata i da napravite promena samo na soodveteniot clen | Array.map
-
-
-
 //? - Treba da se izbrise student od fajlot
-
-
-
-//? 4. Nizata od js niza/objekt treba da bide konertirana vo tekst | JSON.stringify
-//? 5. Tekstot treba da bide zachuvan vo fajlot | fs.writeFile
 const readWrite = await import("./ReadWrite.js");
 const fs = import("fs");
 // 1
@@ -49,7 +32,7 @@ const fs = import("fs");
     const konvertiranaNiza = JSON.stringify(studenti);
     console.log(konvertiranaNiza);
     //? 5. Tekstot treba da bide zacuvan vo fajlot | fs.writeFile
-    // await readWrite.fileWrite(`studenti.json`,konvertiranaNiza);
+    await readWrite.fileWrite(`studenti2.json`,konvertiranaNiza);
   } catch (err) {
     console.log(err);
   }
@@ -75,7 +58,7 @@ const fs = import("fs");
         const tekstNiza = JSON.stringify(mapStudents);
         console.log(tekstNiza);
       //? 5. Tekstot treba da bide zacuvan vo fajlot | fs.writeFile
-      // await readWrite.fileWrite(`studenti.json`,mapStudents);
+      await readWrite.fileWrite(`studenti3.json`,tekstNiza);
     } catch (err) {
       console.log(err);
     }
@@ -98,7 +81,7 @@ const fs = import("fs");
     const stringNiza = JSON.stringify(filteredNiza);
     console.log(stringNiza);
     //? 5. Tekstot treba da bide zachuvan vo fajlot | fs.writeFile
-    // const finalnaNiza3 = await readWrite.fileWrite(`studenti.json`, stringNiza)
+    await readWrite.fileWrite(`studenti4.json`, stringNiza)
     } catch (err) {
       console.log(err);
     }
